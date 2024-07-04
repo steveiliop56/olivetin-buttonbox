@@ -22,20 +22,6 @@ main {
   margin-bottom: auto;
 }
 
-#page-title a {
-  text-decoration: none;
-}
-
-#page-title a:active {
-  background-color: transparent;
-  color: var(--color-font);
-  outline: none;
-}
-
-#page-title a:hover {
-  opacity: 80%;
-}
-
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -112,6 +98,14 @@ button:focus {
 
 #sidebar-toggler-button:hover {
   opacity: 80%;
+}
+
+#sidebar-toggler-button:active {
+  background-color: transparent;
+}
+
+#sidebar-toggler-button:focus {
+  background-color: transparent;
 }
 
 nav.sidebar {
@@ -313,4 +307,22 @@ dialog#big-error {
   background-color: var(--color-primary);
   color: var(--color-font);
   border-radius: 0.375rem;
+}
+
+/* Links */
+
+a:active {
+  color: var(--color-font);
+  background-color: transparent;
+  outline: none;
+}
+
+a:focus {
+  color: var(--color-font);
+  background-color: transparent;
+  outline: none;
+}
+
+a:hover {
+  opacity: 80%;
 }
