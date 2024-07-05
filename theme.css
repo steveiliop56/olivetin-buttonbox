@@ -311,6 +311,10 @@ dialog#big-error {
 
 /* Links */
 
+a {
+  color: var(--color-font)
+}
+
 a:active {
   color: var(--color-font);
   background-color: transparent;
