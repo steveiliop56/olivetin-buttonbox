@@ -123,11 +123,13 @@ nav.sidebar ul li {
 nav.sidebar ul li a:hover {
   border-radius: 0.1rem;
   background-color: #666666;
+  color: var(--color-font);
 }
 
 nav.sidebar ul li a:focus {
   outline: none;
   background-color: #666666;
+  color: var(--color-font);
 }
 
 /* Logs */
@@ -184,7 +186,6 @@ th {
 
 tr:hover td {
   background-color: #666666;
-  color: #0a0a0a;
 }
 
 /* Execution Dialog  */
