@@ -2,6 +2,7 @@
   --color-primary: #262626;
   --color-background: #171717;
   --color-font: #e5e5e5;
+  color-scheme: dark;
 }
 
 /* Main */
@@ -15,30 +16,20 @@ body {
 header {
   background-color: var(--color-background);
   color: var(--color-font);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: unset;
+  width: unset;
+}
+
+.userinfo {
+  padding-right: 0rem;
 }
 
 main {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0a0a0a;
-  border-radius: 0.3rem;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  opacity: 80%;
 }
 
 /* Buttons */
@@ -94,6 +85,11 @@ button:focus {
   box-shadow: none;
   background-color: transparent;
   outline: none;
+  padding: 0rem;
+  margin-left: 0rem;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 #sidebar-toggler-button:hover {
@@ -114,6 +110,7 @@ nav.sidebar {
   color: var(--color-font);
   border: none;
   border-radius: 0.25rem;
+  z-index: 1;
 }
 
 nav.sidebar ul li {
@@ -144,6 +141,21 @@ div.toolbar {
   margin-bottom: 1rem;
 }
 
+label.input-with-icons {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+label.input-with-icons svg {
+  display: none;
+}
+
+label.input-with-icons button svg {
+  display: block;
+}
+
 #logSearchBox {
   border-radius: 0.25rem;
   border: none;
@@ -163,6 +175,15 @@ div.toolbar {
   background-color: #0a0a0a;
   height: 2.5rem;
   width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contentLogs {
+  box-shadow: none;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  border-radius: 0.375rem;
 }
 
 table {
@@ -173,6 +194,8 @@ table {
   outline: none;
   border-collapse: separate;
   border-radius: 0.25rem;
+  display: block;
+  overflow: scroll;
 }
 
 td,
@@ -188,6 +211,38 @@ tr:hover td {
   background-color: #666666;
 }
 
+span.annotation-key {
+  color: unset;
+  background-color: unset;
+  border-radius: unset;
+  padding: 0.5rem;
+  text-transform: capitalize;
+}
+
+span.annotation-value {
+  border-radius: 0.375rem;
+}
+
+.action-header span.icon, tr.log-row span.icon {
+  padding-right: unset;
+  display: block;
+}
+
+.action-status {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.action-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.action-header h2 {
+  flex-grow: 0;
+}
+
 /* Execution Dialog  */
 
 #execution-results-popup {
@@ -196,6 +251,13 @@ tr:hover td {
   border: none;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   border-radius: 0.375rem;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+#execution-results-popup .action-header {
+  margin-bottom: unset;
+  justify-content: space-between;
 }
 
 #execution-dialog-status {
@@ -211,6 +273,15 @@ tr:hover td {
   border-radius: 0.25rem;
 }
 
+#execution-dialog-rerun-action {
+  border-radius: 0.25rem;
+}
+
+#execution-dialog-basics {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 form button {
   border-radius: 0.25rem;
 }
@@ -222,6 +293,17 @@ form button {
   border: none;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   border-radius: 0.375rem;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+#argument-popup .action-header {
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.arguments label {
+  margin-bottom: 0rem;
 }
 
 form div.wrapper {
@@ -315,12 +397,23 @@ dialog#big-error {
   background-color: var(--color-primary);
   color: var(--color-font);
   border-radius: 0.375rem;
+  width: calc(100% - 4rem);
+  margin: auto;
 }
+
+#contentDiagnostics {
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  border-radius: 0.375rem;
+} 
 
 /* Links */
 
 a {
-  color: var(--color-font)
+  color: var(--color-font);
+  text-decoration: none;
+  position: relative;
 }
 
 a:active {
@@ -337,4 +430,10 @@ a:focus {
 
 a:hover {
   opacity: 80%;
+}
+
+/* Footer */
+
+footer {
+  padding: 0.5rem;
 }
